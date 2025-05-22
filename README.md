@@ -25,12 +25,24 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
 - Explicit Euler
 - Implicit Euler
 - Runge-Kutta-Chebyshev (**RKC**)
-- **Improved RKC (IMPRKC)** – implemented for its enhanced **vertical stability**, critical for handling vertically distributed eigenvalue spectra in high Péclet number regimes.
+- **Improved RKC (IMPRKC)** – implemented for its enhanced **vertical stability** in the complex plane.
 
-> 💡 **Eigenvalue-aware method selection**: Depending on the **Péclet number**, the convection–diffusion system's eigenvalues shift in orientation:
-> - **Low Pe** → eigenvalues distributed horizontally
-> - **High Pe** → eigenvalues shift vertically
-> IMPRKC was chosen to ensure robust stability across both regimes.
+> 💡 **Eigenvalue-aware method selection**:  
+> The eigenvalue distribution of the convection–diffusion operator depends both on the **discretization scheme** and the **Péclet number (Pe)**:
+>
+> - Using **first-order upwind** for convection:
+>   - **Low Pe** → eigenvalues distributed **horizontally** (near the real axis, \( y = 0 \))
+>   - **High Pe** → eigenvalues stretch **vertically** (down the negative x-axis)
+>
+> - Using **centered differences**:
+>   - Eigenvalues tend to remain **horizontal**, but distribution width increases with \( h \) and Pe
+>
+> - For **BDF (Backward Differentiation Formula)**:
+>   - Eigenvalues form either a **vertical line** or a **circular arc** centered in the negative real axis, depending on the mesh size \( h \) and Péclet number
+>
+> **IMPRKC** was chosen for its **robust vertical stability**, which ensured stable integration even when eigenvalues were vertically aligned—particularly relevant in high-Pe regimes or fine spatial meshes.
+
+---
 
 ### 📊 Metrics Studied:
 - L² Error Analysis
