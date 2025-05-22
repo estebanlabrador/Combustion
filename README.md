@@ -59,18 +59,28 @@ The focus of the analysis was to **evaluate when each time integration scheme pe
 I developed a **systematic method** to evaluate the **numerical stability** of convection-diffusion-reaction (CDR) simulations based on:
 - **Discretization scheme** (spatial mesh size `h`)
 - **Time integration method** (`RK2`, `Explicit Euler`, `IMPRKC`)
-- **Physical parameters** of the equation ADD EQUATION
-   - Reaction coefficient: `c`  
-  - Convection coefficient: `β`  
-  - Source term: `q`
+- **Physical parameters** of the equation:
+  \[
+\frac{\partial u}{\partial t} + \beta \frac{\partial u}{\partial x} - \alpha \frac{\partial^2 u}{\partial x^2} + c u = q
+\]
+
+Where:
+- `c` is the reaction coefficient  
+- `β` is the convection coefficient  
+- `q` is the source term  
+- `α` is the diffusion coefficient (assumed constant and incorporated implicitly in spatial discretization)
+ 
  
 The method identifies the **maximum stable time step (`Δt`)** that ensures convergence for each setup.
 
-### ⚙️ Time Integration Methods Compared fpr a particular case
+### ⚙️ Time Integration Methods Compared (for a Particular Case)
   - Reaction coefficient: `c = 1`  
   - Convection coefficient: `β = 10`  
   - Source term: `q = 5`
-With this parameters the eigenvalue spread is horizontal.
+
+> With these parameters, the eigenvalue spectrum is **horizontally spread**, dominated by convection and reaction terms.
+> 
+---
 
 ### 1. RK2 (Second-Order Runge-Kutta)
 Second-order explicit method with a **strict stability limit**. `Δt` decreases rapidly with mesh refinement.
@@ -97,18 +107,20 @@ Same behavior as RK2 due to its explicit nature.
 ### 3. IMPRKC (Improved Explicit Runge-Kutta-Chebyshev)
 Specialized for **stiff systems**. Allows **significantly larger time steps**, scalable with the number of stages.
 
-| nStages | `h = 0.1` | `h = 0.05` | `h = 0.025` | Notes                        |
-|---------|-----------|------------|-------------|------------------------------|
-| 5       | 0.03649   | 0.0097273  | 0.00248     | Cuts off at ~1e-16           |
-| 10      | 0.14598   | 0.0389     | 0.0099255   | Cuts off at ~1e-64           |
-| 20      | 0.593     | 0.15807    | 0.0403224   | Cuts off at ~1e-260          |
-| 50      | 3.695     | 0.984888   | 0.251239    | Cuts off at ~1e-1620         |
+| nStages | `h = 0.1` | `h = 0.05` | `h = 0.025` | 
+|---------|-----------|------------|-------------|
+| 5       | 0.03649   | 0.0097273  | 0.00248     |      
+| 10      | 0.14598   | 0.0389     | 0.0099255   | 
+| 20      | 0.593     | 0.15807    | 0.0403224   | 
+| 50      | 3.695     | 0.984888   | 0.251239    | 
 
-####🧠 Insight Summary
+---
 
-- For **explicit methods (Euler, RK2)**, stability limit scales with `h²` — expected for diffusion-dominated problems.
-- **IMPRKC** dramatically improves stability for stiff PDEs and fine meshes by increasing `nStages`.
-- This approach enables **pre-simulation filtering** of unstable configurations, boosting simulation efficiency and robustness.
+###🧠 Insight Summary
+
+- For **explicit methods** (Euler, RK2), the stability limit scales as `Δt ∝ h²`, which is typical for **diffusion-dominated** problems.
+- **IMPRKC** greatly increases allowable time steps in **stiff** scenarios, especially when using higher `nStages`, making it ideal for convection-reaction dominated cases.
+- The developed method supports **pre-simulation stability analysis**, allowing unstable combinations to be filtered out early—boosting **robustness and computational efficiency**.
 
 
 ---
