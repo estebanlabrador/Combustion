@@ -35,7 +35,7 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
 >   - **High Pe** → eigenvalues stretch **vertically** (down the negative x-axis)
 >
 > - Using **centered differences**:
->   - Eigenvalues tend to remain **horizontal**, but distribution width increases with \( h \) and Pe
+>   - Eigenvalues tend to remain **horizontal**, but distribution width depend on mesh size \( h \) and Péclet number
 >
 > - For **BDF (Backward Differentiation Formula)**:
 >   - Eigenvalues form either a **vertical line** or a **circular arc** centered in the negative real axis, depending on the mesh size \( h \) and Péclet number
@@ -45,10 +45,10 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
 ---
 
 ### 📊 Metrics Studied:
-- L² Error Analysis
-- Spectral Radius and Stability Regions
+The focus of the analysis was to **evaluate when each time integration scheme performs well**, by studying **how the eigenvalues of the discretized PDE system align with the method's stability region**.
+-**Spectral Radius and Stability Regions** – Analyzed to determine **whether the eigenvalues lie inside the method's stability domain**, ensuring numerical stability
 - Flame Front Speed (via y = 0.5 interpolation)
-- Eigenvalue Distributions for varying β and c parameters
+- **Eigenvalue Distributions for varying β and c parameters** – Explored how **reaction rate (β)** and **convection strength (c)** affect the eigenvalue spread
 
 ---
 
