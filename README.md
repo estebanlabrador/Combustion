@@ -79,8 +79,7 @@ The method identifies the **maximum stable time step (`Δt`)** that ensures conv
   - Source term: `q = 5`
 
 > With these parameters, the eigenvalue spectrum is **horizontally spread**, dominated by convection and reaction terms.
-> 
----
+
 
 ### 1. RK2 (Second-Order Runge-Kutta)
 Second-order explicit method with a **strict stability limit**. `Δt` decreases rapidly with mesh refinement.
@@ -91,7 +90,7 @@ Second-order explicit method with a **strict stability limit**. `Δt` decreases 
 | 0.05             | 0.0012159 |
 | 0.025            | 0.000317  |
 
----
+
 
 ### 2. Explicit Euler
 Same behavior as RK2 due to its explicit nature.
@@ -102,7 +101,7 @@ Same behavior as RK2 due to its explicit nature.
 | 0.05             | 0.0012159 |
 | 0.025            | 0.000317  |
 
----
+
 
 ### 3. IMPRKC (Improved Explicit Runge-Kutta-Chebyshev)
 Specialized for **stiff systems**. Allows **significantly larger time steps**, scalable with the number of stages.
@@ -114,9 +113,8 @@ Specialized for **stiff systems**. Allows **significantly larger time steps**, s
 | 20      | 0.593     | 0.15807    | 0.0403224   | 
 | 50      | 3.695     | 0.984888   | 0.251239    | 
 
----
 
-###🧠 Insight Summary
+### 🧠 Insight Summary
 
 - For **explicit methods** (Euler, RK2), the stability limit scales as `Δt ∝ h²`, which is typical for **diffusion-dominated** problems.
 - **IMPRKC** greatly increases allowable time steps in **stiff** scenarios, especially when using higher `nStages`, making it ideal for convection-reaction dominated cases.
