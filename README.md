@@ -1,5 +1,4 @@
 # Reactive Transport Modeling in Combustion Systems
-## 🎓 Research Context
 
 - **Institution**: Polytechnic University of Madrid  
 - **Duration**: January 2024 – June 2024  
