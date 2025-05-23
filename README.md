@@ -97,7 +97,7 @@ I developed a **systematic method** to evaluate the **numerical stability** of c
 - **Time integration method** (`RK2`, `Explicit Euler`, `IMPRKC`)
 - **Physical parameters** of the **convection-diffusion-reaction equation**:
  
-<pre lang="text"> ∂Θ/∂t = -c ∂Θ/∂η + ∂²Θ/∂η² + gβ² e^η * (1 - Θ)/(1 + gΘ) * exp[-β(1 + g)/(1 + gΘ)]
+<pre lang="text">∂Θ/∂t = -c ∂Θ/∂η + ∂²Θ/∂η² + gβ² e^η * (1 - Θ)/(1 + gΘ) * exp[-β(1 + g)/(1 + gΘ)]
 Θ(t = 0) = 0.5 * [1 + tanh(η)] with η ∈ [-10, 10] 
 Θ = 1 when η → -∞ and Θ = 0 when η → ∞ </pre>
 
