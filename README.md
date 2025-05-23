@@ -64,16 +64,6 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
   <em>Eigenvalue spectrum for BDF method</em>
 </p>
 
-> **IMPRKC** was chosen for its **robust vertical stability**, ensuring stable integration even when eigenvalues are vertically aligned—especially relevant in high-Pe regimes or with fine spatial meshes.
-
-<p align="center">
-  <img src="./imprkc.png" alt="Eigenvalue distribution for BDF scheme" width="45%" />
-</p>
-
-<p align="center">
-  <em>Eigenvalue spectrum for BDF method</em>
-</p>
-
 > **IMPRKC** was chosen for its **enhanced vertical stability**, which is critical for stiff problems where eigenvalues align along the imaginary axis—typical in **high-Pe regimes** or with **fine spatial meshes**.
 >
 > In standard **RKC** methods, the **number of stages** `nst` determines the extent of the stability region. The **improved variant**, **IMPRKC**, introduces a modified stage structure (`nst_g`) that significantly **widens the stability region along the vertical axis** of the complex plane. This allows the method to integrate more stiff systems efficiently without sacrificing stability.
