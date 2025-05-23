@@ -54,7 +54,7 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
 </p>
 
 > - For **BDF (Backward Differentiation Formula)**:
->   - Eigenvalues form either a **vertical line** or a **circular arc** centered on the negative real axis, depending on mesh size \( h \) and Péclet number
+>   - Eigenvalues form either a **vertical line** or a **elliptical arc** centered on the negative real axis, depending on mesh size \( h \) and Péclet number
 
 <p align="center">
   <img src="./bdf.png" alt="Eigenvalue distribution for BDF scheme" width="45%" />
