@@ -98,18 +98,9 @@ I developed a **systematic method** to evaluate the **numerical stability** of c
 - **Physical parameters** of the **convection-diffusion-reaction equation**:
  
 $$
-\Delta t_{\text{max}} = \frac{c}{\lambda_{\max}}
 
 \frac{\partial \Theta}{\partial t} = -c \frac{\partial \Theta}{\partial \eta} + \frac{\partial^2 \Theta}{\partial \eta^2} 
 + g \beta^2 e^{\eta} \frac{1 - \Theta}{1 + g \Theta} e^{- \frac{\beta (1 + g)}{1 + g \Theta}}
-
-
-
-\Theta(t = 0) = 0.5 \left[1 + \tanh(\eta)\right], \quad -10 \leq \eta \leq 10
-
-
-
-\Theta = 1 \quad \text{as} \quad \eta \to -\infty, \quad \Theta = 0 \quad \text{as} \quad \eta \to \infty
 
 $$
 
