@@ -33,6 +33,7 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
 >Θ(t = 0) = 0.5 * [1 + tanh(-α (x - 0.5))]  with α = 10
 >Θ(x = 0) = 1, and dΘ/dx (x = 1) = 0
 </pre>
+
 > - Using **first-order upwind** for convection:
 >   - **Low Pe** → eigenvalues are distributed **horizontally** (near the real axis, \( y = 0 \))
 >   - **High Pe** → eigenvalues stretch **vertically** (down the negative x-axis)
