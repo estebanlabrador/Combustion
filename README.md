@@ -7,7 +7,9 @@
 
 ---
 
-The Péclet number is defined as \( \mathrm{Pe} = \frac{uL}{\alpha} \).
+$$
+\Delta t_{\text{max}} = \frac{c}{\lambda_{\max}}
+$$
 
 ## 🌍 Project Objective
 
