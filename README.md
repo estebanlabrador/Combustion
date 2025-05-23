@@ -66,7 +66,13 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
 
 > **IMPRKC** was chosen for its **robust vertical stability**, ensuring stable integration even when eigenvalues are vertically aligned—especially relevant in high-Pe regimes or with fine spatial meshes.
 
+<p align="center">
+  <img src="./bdf.png" alt="Eigenvalue distribution for BDF scheme" width="45%" />
+</p>
 
+<p align="center">
+  <em>Eigenvalue spectrum for BDF method</em>
+</p>
 
 > 💡 **Eigenvalue-aware method selection**:  
 > The eigenvalue distribution of the convection–diffusion operator depends both on the **discretization scheme** and the **Péclet number (Pe)**:
