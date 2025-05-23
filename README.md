@@ -7,10 +7,12 @@
 
 ---
 
+The Péclet number is defined as \( \mathrm{Pe} = \frac{uL}{\alpha} \).
+
 ## 🌍 Project Objective
 
 Simulate and analyze the **stability and propagation** of reactive flows using time integration methods tailored to **stiff PDE systems**. The project focused on understanding how numerical methods perform under varying eigenvalue distributions—especially in **convection–diffusion–reaction** problems where time integration stability is a bottleneck.
-The Péclet number is defined as \( \mathrm{Pe} = \frac{uL}{\alpha} \).
+
 ---
 
 ## ⚙️ Technical Highlights
