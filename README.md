@@ -140,7 +140,7 @@ Same behavior as RK2 due to its explicit nature.
 
 
 ### 3. IMPRKC (Improved Explicit Runge-Kutta-Chebyshev)
-Specialized for **stiff systems**. Allows **significantly larger time steps**, scalable with the number of stages.
+Specialized for **stiff systems**. Allows **significantly larger time steps**, scalable with the number of stages. In this case, the results are **independent of `nst_g`**, meaning that even with the improved stage structure, the **maximum stable time step (`Δt`)** remains the same as in the standard RKC method.
 
 | nStages | `h = 0.1` | `h = 0.05` | `h = 0.025` | 
 |---------|-----------|------------|-------------|
