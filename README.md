@@ -28,25 +28,81 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
 - **Improved RKC (IMPRKC)** – implemented for its enhanced **vertical stability** in the complex plane.
 
 > 💡 **Eigenvalue-aware method selection**:  
+> The eigenvalue distribution of the convection–diffusion operator depends on both the **discretization scheme** and the **Péclet number (Pe)**:
+>
+> - Using **first-order upwind** for convection:
+>   - **Low Pe** → eigenvalues are distributed **horizontally** (near the real axis, \( y = 0 \))
+>   - **High Pe** → eigenvalues stretch **vertically** (down the negative x-axis)
+
+<p align="center">
+  <img src="./primerorden.png" alt="Eigenvalue distribution for first-order upwind scheme" width="45%" />
+</p>
+
+<p align="center">
+  <em>Eigenvalue spectrum for first-order upwind scheme</em>
+</p>
+
+> - Using **centered differences**:
+>   - Eigenvalues tend to remain **horizontal**, but the distribution width depends on the mesh size \( h \) and Péclet number
+
+<p align="center">
+  <img src="./difcentradas.png" alt="Eigenvalue distribution for centered difference scheme" width="45%" />
+</p>
+
+<p align="center">
+  <em>Eigenvalue spectrum for centered differences</em>
+</p>
+
+> - For **BDF (Backward Differentiation Formula)**:
+>   - Eigenvalues form either a **vertical line** or a **circular arc** centered on the negative real axis, depending on mesh size \( h \) and Péclet number
+
+<p align="center">
+  <img src="./bdf.png" alt="Eigenvalue distribution for BDF scheme" width="45%" />
+</p>
+
+<p align="center">
+  <em>Eigenvalue spectrum for BDF method</em>
+</p>
+
+> **IMPRKC** was chosen for its **robust vertical stability**, ensuring stable integration even when eigenvalues are vertically aligned—especially relevant in high-Pe regimes or with fine spatial meshes.
+
+
+
+> 💡 **Eigenvalue-aware method selection**:  
 > The eigenvalue distribution of the convection–diffusion operator depends both on the **discretization scheme** and the **Péclet number (Pe)**:
 >
 > - Using **first-order upwind** for convection:
 >   - **Low Pe** → eigenvalues distributed **horizontally** (near the real axis, \( y = 0 \))
 >   - **High Pe** → eigenvalues stretch **vertically** (down the negative x-axis)
->
-> <p align="center">
+
+<p align="center">
   <img src="./primerorden.png" alt="Cam component after aluminum casting" width="45%" />
 </p>
 
 <p align="center">
   <em>Cam after casting</em>
 </p>
+
 > - Using **centered differences**:
 >   - Eigenvalues tend to remain **horizontal**, but distribution width depend on mesh size \( h \) and Péclet number
->
+
+<p align="center">
+  <img src="./difcentradas.png" alt="Cam component after aluminum casting" width="45%" />
+</p>
+
+<p align="center">
+  <em>Cam after casting</em>
+
 > - For **BDF (Backward Differentiation Formula)**:
 >   - Eigenvalues form either a **vertical line** or a **circular arc** centered in the negative real axis, depending on the mesh size \( h \) and Péclet number
->
+
+<p align="center">
+  <img src="./bdf.png" alt="Cam component after aluminum casting" width="45%" />
+</p>
+
+<p align="center">
+  <em>Cam after casting</em>
+  
 > **IMPRKC** was chosen for its **robust vertical stability**, which ensured stable integration even when eigenvalues were vertically aligned—particularly relevant in high-Pe regimes or fine spatial meshes.
 
 ---
