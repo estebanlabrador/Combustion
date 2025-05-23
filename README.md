@@ -35,8 +35,7 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
 </pre>
 
 > - Using **first-order upwind** for convection:
->   - **Low Pe** → eigenvalues are distributed **horizontally** (near the real axis, \( y = 0 \))
->   - **High Pe** → eigenvalues stretch **vertically** (down the negative x-axis)
+>   - Eigenvalues tend to remain **horizontal**, but the distribution width depends on the mesh size \( h \) and Péclet number
 
 <p align="center">
   <img src="./primerorden.png" alt="Eigenvalue distribution for first-order upwind scheme" width="45%" />
@@ -47,7 +46,8 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
 </p>
 
 > - Using **centered differences**:
->   - Eigenvalues tend to remain **horizontal**, but the distribution width depends on the mesh size \( h \) and Péclet number
+>   - **Low Pe** → eigenvalues are distributed **horizontally** (near the real axis, \( y = 0 \))
+>   - **High Pe** → eigenvalues stretch **vertically** (down the negative x-axis)
 
 <p align="center">
   <img src="./difcentradas.png" alt="Eigenvalue distribution for centered difference scheme" width="45%" />
