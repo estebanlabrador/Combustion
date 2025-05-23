@@ -34,6 +34,13 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
 >   - **Low Pe** → eigenvalues distributed **horizontally** (near the real axis, \( y = 0 \))
 >   - **High Pe** → eigenvalues stretch **vertically** (down the negative x-axis)
 >
+> <p align="center">
+  <img src="./leva.png" alt="Cam component after aluminum casting" width="45%" />
+</p>
+
+<p align="center">
+  <em>Cam after casting</em>
+</p>
 > - Using **centered differences**:
 >   - Eigenvalues tend to remain **horizontal**, but distribution width depend on mesh size \( h \) and Péclet number
 >
