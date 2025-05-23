@@ -56,7 +56,13 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
 > - For **BDF (Backward Differentiation Formula)**:
 >   - Eigenvalues form either a **vertical line** or a **circular arc** centered on the negative real axis, depending on mesh size \( h \) and Péclet number
 
+<p align="center">
+  <img src="./bdf.png" alt="Eigenvalue distribution for BDF scheme" width="45%" />
+</p>
 
+<p align="center">
+  <em>Eigenvalue spectrum for BDF method</em>
+</p>
 
 > **IMPRKC** was chosen for its **enhanced vertical stability**, which is critical for stiff problems where eigenvalues align along the imaginary axis—typical in **high-Pe regimes** or with **fine spatial meshes**.
 >
