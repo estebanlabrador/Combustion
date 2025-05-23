@@ -98,7 +98,8 @@ I developed a **systematic method** to evaluate the **numerical stability** of c
 - **Physical parameters** of the **convection-diffusion-reaction equation**:
  
 <pre lang="text"> ∂Θ/∂t = -c ∂Θ/∂η + ∂²Θ/∂η² + gβ² e^η * (1 - Θ)/(1 + gΘ) * exp[-β(1 + g)/(1 + gΘ)]
-  Θ(t = 0) = 0.5 * [1 + tanh(η)] para η ∈ [-10, 10] Condiciones de frontera: Θ = 1 cuando η → -∞ Θ = 0 cuando η → ∞ </pre>
+Θ(t = 0) = 0.5 * [1 + tanh(η)] with η ∈ [-10, 10] 
+Θ = 1 when η → -∞ and Θ = 0 when η → ∞ </pre>
 
 Where:
 - `c` is the reaction coefficient  
