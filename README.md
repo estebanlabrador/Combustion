@@ -35,7 +35,7 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
 >   - **High Pe** → eigenvalues stretch **vertically** (down the negative x-axis)
 >
 > <p align="center">
-  <img src="./leva.png" alt="Cam component after aluminum casting" width="45%" />
+  <img src="./primerorden.png" alt="Cam component after aluminum casting" width="45%" />
 </p>
 
 <p align="center">
