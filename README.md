@@ -67,49 +67,14 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
 > **IMPRKC** was chosen for its **robust vertical stability**, ensuring stable integration even when eigenvalues are vertically aligned—especially relevant in high-Pe regimes or with fine spatial meshes.
 
 <p align="center">
-  <img src="./bdf.png" alt="Eigenvalue distribution for BDF scheme" width="45%" />
+  <img src="./imprkc.png" alt="Eigenvalue distribution for BDF scheme" width="45%" />
 </p>
 
 <p align="center">
   <em>Eigenvalue spectrum for BDF method</em>
 </p>
 
-> 💡 **Eigenvalue-aware method selection**:  
-> The eigenvalue distribution of the convection–diffusion operator depends both on the **discretization scheme** and the **Péclet number (Pe)**:
->
-> - Using **first-order upwind** for convection:
->   - **Low Pe** → eigenvalues distributed **horizontally** (near the real axis, \( y = 0 \))
->   - **High Pe** → eigenvalues stretch **vertically** (down the negative x-axis)
 
-<p align="center">
-  <img src="./primerorden.png" alt="Cam component after aluminum casting" width="45%" />
-</p>
-
-<p align="center">
-  <em>Cam after casting</em>
-</p>
-
-> - Using **centered differences**:
->   - Eigenvalues tend to remain **horizontal**, but distribution width depend on mesh size \( h \) and Péclet number
-
-<p align="center">
-  <img src="./difcentradas.png" alt="Cam component after aluminum casting" width="45%" />
-</p>
-
-<p align="center">
-  <em>Cam after casting</em>
-
-> - For **BDF (Backward Differentiation Formula)**:
->   - Eigenvalues form either a **vertical line** or a **circular arc** centered in the negative real axis, depending on the mesh size \( h \) and Péclet number
-
-<p align="center">
-  <img src="./bdf.png" alt="Cam component after aluminum casting" width="45%" />
-</p>
-
-<p align="center">
-  <em>Cam after casting</em>
-  
-> **IMPRKC** was chosen for its **robust vertical stability**, which ensured stable integration even when eigenvalues were vertically aligned—particularly relevant in high-Pe regimes or fine spatial meshes.
 
 ---
 
