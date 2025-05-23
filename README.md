@@ -57,7 +57,7 @@ Simulate and analyze the **stability and propagation** of reactive flows using t
 >   - Eigenvalues form either a **vertical line** or a **circular arc** centered on the negative real axis, depending on mesh size \( h \) and Péclet number
 
 <p align="center">
-  <img src="./" alt="Eigenvalue distribution for BDF scheme" width="45%" />
+  <img src="./bdf.png" alt="Eigenvalue distribution for BDF scheme" width="45%" />
 </p>
 
 <p align="center">
